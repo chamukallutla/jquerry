@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+ name: jquerry-ingress
+ namespace: jquerry
+spec:
+ rules:
+ - host: 
+   http:
+     paths:
+     - path:
+       backend:
+         serviceName: jquerry-service
+         servicePort: 80
