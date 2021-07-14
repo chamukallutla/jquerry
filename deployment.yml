@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: jquerry-deployment
+  namespace: jquerry
+spec:
+  selector:
+    matchLabels:
+      app: jquerry
+  replicas: 3 # tells deployment to run 3 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: jquerry
+    spec:
+      containers:
+      - name: jquerry
+        image: 405740401707.dkr.ecr.us-east-2.amazonaws.com/juqerry:10
+        ports:
+        - containerPort: 80
